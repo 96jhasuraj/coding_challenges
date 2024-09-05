@@ -6,5 +6,5 @@ Below is a table of the challenges and their corresponding details.
 
 | No. | Challenge | GitHub Repository                                                                 | Challenge Link                                                      |
 |-----|-----------|-----------------------------------------------------------------------------------|---------------------------------------------------------------------|
-| 1   | `wc`       | [GitHub Link](https://github.com/96jhasuraj/coding_challenges/tree/main/1_WC) | [Challenge Details](https://codingchallenges.fyi/challenges/challenge-wc) |
+| 1   | `wc`       |https://github.com/96jhasuraj/coding_challenges/tree/main/1_WC | [Challenge Details](https://codingchallenges.fyi/challenges/challenge-wc) |
 
