@@ -1,6 +1,6 @@
 # ccwc: Implementation of the `wc` Command
 
-This project is an implementation of the Unix `wc` (word count) command in Python, called `ccwc` (Custom Word Count) . Tests taken from https://codingchallenges.fyi/challenges/challenge-wc
+This project is an implementation of the Unix `wc` (word count) command in Python, called `wc` (Custom Word Count) . Tests taken from https://codingchallenges.fyi/challenges/challenge-wc
 
 ## Features
 
