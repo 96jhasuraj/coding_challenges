@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 
 def count_bytes(file):
     try:
@@ -50,27 +51,43 @@ def main():
         check_asserts()
     except Exception as e:
         print(e)
-        print("ccwc :: Warning checks failing")
+        print("wc :: Warning checks failing")
         
     parser = argparse.ArgumentParser(
-        prog='ccwc',
+        prog='wc',
         description='Counts bytes in a file.'
     )
     parser.add_argument('-c', action='store_true', help='Print byte count of a file')
     parser.add_argument('-l', action='store_true', help='Print lines count of a file')
     parser.add_argument('-w', action='store_true', help='Print words count of a file')
-
-    parser.add_argument('file', help='File to process')
+    parser.add_argument('file', nargs='?', help='File to read from', default=None)
 
     args = parser.parse_args()
+    if not any([args.l, args.w, args.c]):
+        args.l = args.w = args.c = True
     
-    if args.c:
-        bytes_count = count_bytes(args.file)
-        print(f"{bytes_count} {args.file}")
-    if args.l:
-        print(f"{count_lines(args.file)} {args.file}")
-    if args.w:
-        print(f"{count_words(args.file)} {args.file}")
+    if not args.file:
+        try:
+            stream = sys.stdin.read()
+            if args.l:
+                lines = stream.count('\n')
+                print(f"{lines}")
+            if args.w:
+                words = len(stream.split())
+                print(f"{words}")
+            if args.c:
+                bytes = len(stream)
+                print(f"{bytes}")
+        except Exception as e:
+            print("cw:errror in processing stream" , e)
+    else:
+        if args.c:
+            bytes_count = count_bytes(args.file)
+            print(f"{bytes_count} {args.file}")
+        if args.l:
+            print(f"{count_lines(args.file)} {args.file}")
+        if args.w:
+            print(f"{count_words(args.file)} {args.file}")
         
 
 if __name__ == '__main__':
