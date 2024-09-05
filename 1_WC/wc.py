@@ -42,7 +42,7 @@ def main():
     if args.c:
         bytes_count = count_bytes(args.file)
         print(f"{bytes_count} {args.file}")
-    if args.c:
+    if args.l:
         print(f"{count_lines(args.file)} {args.file}")
         
 
