@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+
+import git_lib
+git_lib.main()
